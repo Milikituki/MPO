@@ -1,6 +1,9 @@
+import EnumsEjercicios.Monedas;
+
 import java.util.Scanner;
 
 public class EjerciciosAvanzadosSwitch {
+    Scanner scanner = new Scanner(System.in);
     public void e1(){
         //Crea un programa que convierta una calificación numérica en su equivalente alfabético usando un switch
         Scanner scanner = new Scanner(System.in);
@@ -32,6 +35,38 @@ public class EjerciciosAvanzadosSwitch {
             }
         }
         System.out.printf("Nota: %.2f - Calificación: %c", calificacion, letra);
+
+    }
+    public void e2(){
+        Monedas monedas;
+        System.out.printf("Indica la cantidad en euros: ");
+        double euros = scanner.nextDouble();
+        double cantidad = 0;
+        System.out.printf("¿A qué moneda quieres hacer la conversion? (dolar, libra, ye, peso): ");
+        String conversion = scanner.next();
+        monedas = Monedas.valueOf(conversion);
+
+        switch (monedas){
+            case dolar -> {
+                cantidad = euros*1.16;
+                System.out.printf("%.2f EUROS son %.2f DOLARES", euros, cantidad);
+            }
+            case libra -> {
+                cantidad = euros*0.88;
+                System.out.printf("%.2f EUROS son %.2f LIBRAS", euros, cantidad);
+
+            }
+            case yen -> {
+                cantidad = euros*175;
+                System.out.printf("%.2f EUROS son %.2f YENES", euros, cantidad);
+
+            }
+            case peso -> {
+                cantidad = euros*21.21;
+                System.out.printf("%.2f EUROS son %.2f PESOS", euros, cantidad);
+
+            }
+        }
 
     }
 
