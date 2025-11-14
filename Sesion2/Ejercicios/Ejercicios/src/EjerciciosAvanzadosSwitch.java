@@ -69,5 +69,24 @@ public class EjerciciosAvanzadosSwitch {
         }
 
     }
+    public void e3(){
+        System.out.printf("¿Qué temperatura hace hoy? ");
+        int TEMPERATURA = scanner.nextInt();
+        boolean R1 = (TEMPERATURA > -10 && TEMPERATURA <= 0);
+        boolean R2 = (TEMPERATURA > 0 && TEMPERATURA <= 10);
+        boolean R3 = (TEMPERATURA > 10 && TEMPERATURA <= 20);
+        boolean R4 = (TEMPERATURA > 20 && TEMPERATURA <= 30);
+        boolean R5 = (TEMPERATURA > 30 && TEMPERATURA <= 40);
+
+        switch (true){
+            case R1 -> System.out.printf("Ande va pisha, va a volver cubito... no pongas un pie en la calle");
+            case R2 -> System.out.printf("Ponte un xaquetón de bisón, que te va a pelar de frío");
+            case R3 -> System.out.printf("Hace un poco de rasca, acuérdate de coger la xaquetilla");
+            case R4 -> System.out.printf("Qué maravilla de tiempo, compare, ponte lo que te de la gana");
+            case R5 -> System.out.printf("Illo hace má caló que en la comunión der Charmande, sal en bolah");
+            default -> System.out.printf("¿Vah a alicatá un vorcán? Queate en casa, hombre");
+
+        }
+    }
 
 }
