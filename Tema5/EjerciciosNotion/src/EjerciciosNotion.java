@@ -97,18 +97,110 @@ public class EjerciciosNotion {
         intentarLogin("Milikituki", "Milikituki123");
     }
     private boolean intentarLogin(String usuarioCorrecto, String passwordCorrecto){
-
         String usuario, password;
-        for (int i = 0; i <= 3; i++) {
-            System.out.println("Usuario: ");
+
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Usuario: ");
             usuario = scanner.next();
-            System.out.println("Contraseña: ");
+            System.out.print("Contraseña: ");
             password = scanner.next();
             if (usuario.equals(usuarioCorrecto) && password.equals(passwordCorrecto)){
-                break;
+                System.out.println("Login correcto");
+                return true;
             }
-            return true;
+            System.out.println("Credenciales incorrectas, inténtelo de nuevo.");
         }
         return false;
+    }
+    public void e6(){
+        String[] tareas = {"Fregar - Medio", "Limpiar baño - Urgente", "Futbol - Urgente", "Comprar huevos - Bajo"};
+        System.out.println(procesarTareas(tareas));
+    }
+    private String procesarTareas(String[] tareas){
+
+        for (int i = 0; i < tareas.length; i++) {
+            if (tareas[i].toUpperCase().contains("URGENTE")){
+                return tareas[i];
+            }
+        }
+        return "No hay tareas urgentes";
+    }
+    public void e7(){
+        generarFibonacci(100000);
+    }
+    private void generarFibonacci(int limite){
+        int inicio1 = 0;
+        int inicio2 = 1;
+        System.out.println(inicio1);
+        System.out.println(inicio2);
+        int siguienteNumero = 1;
+        while (true){
+            siguienteNumero = inicio1 + inicio2;
+            System.out.println(siguienteNumero);
+            inicio1 = inicio2;
+            inicio2 = siguienteNumero;
+            System.out.println(siguienteNumero);
+            if (siguienteNumero > limite){
+                break;
+            }
+        }
+
+    }
+    public void e8(){
+        int[] array = {123,654,7980,43,12,65,98};
+        System.out.println(contarEdadesValidas(array));
+        System.out.println();
+        mostrarEdadesValidas(array);
+    }
+    private int contarEdadesValidas(int[] edades){
+        int contador = 0;
+        for (int i = 0; i < edades.length; i++) {
+            if (edades[i] > 120 || edades[i] < 0){
+                continue;
+            }
+            contador++;
+        }
+        return contador;
+    }
+    private void mostrarEdadesValidas(int[] edades){
+        for (int i = 0; i < edades.length; i++) {
+            if (edades[i] < 120 && edades[i] > 0){
+                System.out.println(edades[i]);
+            }
+        }
+    }
+    public void e9(){
+        String[] palabras = {"treu", "palabra", "caca"};
+        System.out.println(contadorVocales("Aquesta pilota no, que treu caca"));
+        System.out.println(contienePalabraProhibida("Aquesta pilota no, que treu caca",palabras));
+        System.out.println(primeraPalabraLarga("Aquesta pilota no, que treu caca", 6));
+    }
+    private int contadorVocales(String texto){
+        int contador = 0;
+        for (int i = 0; i < texto.length(); i++) {
+
+            if (!(Character.toLowerCase(texto.charAt(i)) == 'a') && !(Character.toLowerCase(texto.charAt(i)) == 'e') && !(Character.toLowerCase(texto.charAt(i)) == 'i') && !(Character.toLowerCase(texto.charAt(i)) == 'o') && !(Character.toLowerCase(texto.charAt(i)) == 'u')){
+                continue;
+            }
+            contador++;
+        }
+        return contador;
+    }
+    private boolean contienePalabraProhibida(String texto, String[] palabrasProhibidas){
+        for (int i = 0; i < palabrasProhibidas.length; i++) {
+            if (texto.toLowerCase().contains(palabrasProhibidas[i])){
+                return true;
+            }
+        }
+        return false;
+    }
+    private String primeraPalabraLarga(String texto, int longitudMinima){
+        String[] palabras = texto.split(" ");
+        for (int i = 0; i < palabras.length; i++) {
+            if (palabras[i].length() >= longitudMinima){
+                return palabras[i];
+            }
+        }
+        return "No se ha encontrado ninguna palabra";
     }
 }
