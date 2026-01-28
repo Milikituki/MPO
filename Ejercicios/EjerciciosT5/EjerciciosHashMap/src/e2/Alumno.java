@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class Alumno {
     private String dni, nombre, apellido;
     private double nota;
-    private HashMap<String, Alumno> alumnos;
+    private static HashMap<String, Alumno> alumnos = new HashMap<>();
 
     public Alumno(){}
     public Alumno(String dni, String nombre, String apellido, double nota) {
@@ -30,6 +30,39 @@ public class Alumno {
     public void verMejoresExpedientes(int limite){
         ArrayList<Alumno> volcado = new ArrayList<>(alumnos.values());
         volcado.sort(Comparator.comparingDouble(Alumno::getNota));
+        for (int i = 0; i < limite && i < volcado.size(); i++) {
+            System.out.printf("%dº - %s, %.2f%n", i+1, volcado.get(i).getNombre(),volcado.get(i).getNota());
+        }
+    }
+    public void expedientesSuperior(double notaCorte){
+        if (alumnos.isEmpty()){
+            System.out.println("No hay alumnos en la lista");
+        }
+        for (Alumno alumno : alumnos.values()){
+            if (alumno.getNota() >= notaCorte){
+                System.out.println(alumno.getNota());
+            }
+        }
+    }
+    public void vaciarLista(){
+        alumnos.clear();
+        System.out.println("Lista borrada");
+    }
+    public void mostrarLista(){
+        System.out.println("--- LISTA DE ALUMNOS ---");
+        for (Alumno alumno : alumnos.values()) {
+            System.out.println(alumno.toString());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno [" +
+                "Nota: " + nota +
+                ", Apellido='" + apellido + '\'' +
+                ", Nombre='" + nombre + '\'' +
+                ", DNI:'" + dni + '\'' +
+                ']';
     }
 
     public String getDni() {
