@@ -47,7 +47,7 @@ public class GestorProductos {
         productos.forEach(Producto::mostrarDatos);
     }
     public double calcularPrecioMedio(){
-        return Math.round(productos.stream().mapToDouble(Producto::getPrecio).average().getAsDouble());
+        return Math.round(productos.stream().mapToDouble(Producto::getPrecio).average().orElse(0.0));
     }
     public long getNumeroProductosCaros(double limite){
         return productos.stream().filter(x -> x.getPrecio() >= limite).count();
@@ -56,11 +56,12 @@ public class GestorProductos {
         return productos.stream().filter(x -> x.getPrecio() >= limite).toList();
     }
     public Optional<Producto> buscarPorCodigo(String codigo){
-        return productos.stream().filter(x -> x.getCodigo().equals(codigo)).findFirst();
+        return productos.stream().filter(x -> x.getCodigo().equalsIgnoreCase(codigo)).findFirst();
 
     }
     public void ordenarPorPrecioDesc() {
         productos.sort((p1, p2) -> Double.compare(p2.getPrecio(), p1.getPrecio()));
+        //productos.sort(Comparator.comparingDouble(Producto::getPrecio).reversed());
         System.out.println("Productos ordenados por precio (mayor a menor)");
     }
     public List<Producto> getProductosPorCondicion(BiPredicate<Producto, Double> condicion, double valor) {
