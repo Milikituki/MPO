@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.login.controller.AdminController">
+   <top>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../images/Logo-Eroski.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
+   <center>
+      <GridPane prefHeight="273.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="26.0" vgrow="NEVER" />
+          <RowConstraints fillHeight="false" maxHeight="218.0" minHeight="10.0" prefHeight="196.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+              <buttons>
+                <Button fx:id="btnMenuAlta" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="Alta">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnMenuBaja" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="Baja">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnMenuVerDatos" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="Ver datos">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnMenuTrabajadores" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" text="Trabajadores">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnMenuRegistros" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Ver registros">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+              </buttons>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="25.0" />
+               </GridPane.margin>
+            </ButtonBar>
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" pickOnBounds="false" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+               <children>
+                  <VBox fx:id="vboxAlta" pickOnBounds="false" prefHeight="200.0" prefWidth="603.0" visible="false">
+                     <children>
+                        <TextField fx:id="textAltaNombre" alignment="CENTER" promptText="Nombre">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="50.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textAltaApellido" alignment="CENTER" promptText="Apellido">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textAltaDNI" alignment="CENTER" promptText="DNI">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textAltaCorreo" alignment="CENTER" promptText="Email">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textAltaPass" alignment="CENTER" promptText="Contraseña">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="btnAlta" alignment="CENTER" mnemonicParsing="false" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: #C2FCBB;" text="Dar de alta">
+                           <VBox.margin>
+                              <Insets bottom="15.0" left="480.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="40.0" top="40.0" />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="vboxBaja" pickOnBounds="false" prefHeight="200.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <TextField fx:id="textBajaDNI" alignment="CENTER" promptText="DNI">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="btnBaja" alignment="CENTER" mnemonicParsing="false" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: #FF8A8A;" text="Dar de baja">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="440.0" top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="100.0" left="20.0" right="20.0" top="100.0" />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="vboxVerDatos" pickOnBounds="false" prefHeight="200.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <TextField fx:id="textDatosDNI" alignment="CENTER" promptText="DNI ">
+                           <font>
+                              <Font name="Arial" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets bottom="100.0" left="20.0" right="20.0" top="110.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="btnVerDatos" alignment="CENTER" mnemonicParsing="false" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: #B8CEFF;" text="Ver datos">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="480.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="10.0" />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="vboxTrabajadores" pickOnBounds="false" prefHeight="258.0" prefWidth="575.0" visible="false">
+                     <children>
+                        <TableView fx:id="tablaTrabajadores" prefHeight="202.0" prefWidth="600.0">
+                          <columns>
+                            <TableColumn fx:id="colTrabajadores" prefWidth="599.0" text="TRABAJADORES ACTUALES" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                        <Button fx:id="btnCambiarPass" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="39.0" prefWidth="158.0" style="-fx-background-color: #B8CEFF;" text="Modificar contraseña">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="420.0" top="20.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="48.0" top="85.0" />
+                     </StackPane.margin>
+                  </VBox>
+                  <VBox fx:id="vboxRegistros" pickOnBounds="false" prefHeight="199.0" prefWidth="555.0" visible="false">
+                     <children>
+                        <TextArea fx:id="textRegistros" editable="false" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="90.0" left="20.0" right="20.0" top="90.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </StackPane>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <Button fx:id="btnAtras" mnemonicParsing="false" pickOnBounds="false" prefHeight="24.0" prefWidth="84.0" style="-fx-background-color: #FF8A8A;" text="Atrás" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="20.0" />
+         </BorderPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </bottom>
+</BorderPane>
